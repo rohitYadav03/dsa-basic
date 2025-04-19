@@ -83,16 +83,23 @@ int main () {
 // }
 
 // selection sort => selection sort is oppostise of bubble sort in selection sort we find the minimum 
-//                and swap it whith its respective index =2
+//                and swap it whith its respective index
 
-int arr[] = {3,5,62,1,5};
+int arr[] = {3,5,62,1,4};
 int size = 5;
-for(int i =0; i<size -1 ; i++){
+
+for(int i =0; i<size-1; i++){
+   int minimunIdx = i;
   for(int j = i + 1; j<size; j++){
-    
+      if(arr[j] < arr[minimunIdx]){
+        minimunIdx = j;
+      }
   }
+  swap(arr[i], arr[minimunIdx]);
 }
 
-
+for(int i =0; i<size; i++){
+  cout<<arr[i]<<" ";
+}
 
 }
